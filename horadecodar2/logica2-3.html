@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--3. Faça um programa para ler 3 valores (considere que não serão informados valores iguais) e escrever o maior deles.-->
+
+    <script>
+
+ 
+        const valor1 = Number(prompt("Digite o primeiro número"));
+        const valor2 = Number(prompt("Digite o segundo número"));
+        const valor3 = Number(prompt("Digite o terceiro número"));
+ 
+        if (valor1 == valor2 || valor2 == valor3 || valor3 == valor1) {
+            alert("Erro");
+        } else {
+ 
+            if (valor1 > valor2 && valor1 > valor3) {
+                alert("O maior número é: " + valor1);
+            }
+            else if (valor2 > valor1 && valor2 > valor3) {
+                alert("O maior número é: " + valor2);
+            }
+            else {
+                alert("O maior número é: " + valor3);
+            }
+ 
+        }
+ 
+ 
+
+ 
+
+
+
+    </script>
+
+
+</body>
+
+</html>

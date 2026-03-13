@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Faça um programa que leia 3 valores informados pelo usuário (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores.!-->
+    <script>
+
+        let valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+        let valor2 = parseFloat(prompt("Digite o segundo valor:"));
+        let valor3 = parseFloat(prompt("Digite o terceiro valor:"));
+
+        let soma;
+
+        // Descobrir o menor e somar os outros dois
+        if (valor1 < valor2 && valor1 < valor3) {
+            soma = valor2 + valor3;
+        } else if (valor2 < valor1 && valor2 < valor3) {
+            soma = valor1 + valor3;
+        } else {
+            soma = valor1 + valor2;
+        }
+
+        alert("O valor dos dois maiores números " + soma)
+        
+    </script>
+
+
+</body>
+
+</html>

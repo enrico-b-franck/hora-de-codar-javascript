@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--Escreva um programa para ler 2 valores inteiros informados pelo usuário e 
+    uma das seguintes operações a serem executadas 
+    (codificada da seguinte forma: 1. Adição, 2. Subtração, 3. Divisão, 4. Multiplicação).
+O programa deve calcular e escrever o resultado dessa operação sobre os dois valores lidos. 
+-->
+    <script>
+
+        let valor1 = parseInt(prompt("Informe um valor inteiro"))
+        let valor2 = parseInt(prompt("Informe um segundo valor inteiro"))
+        let operacao = parseInt(prompt("Escolha a operação (1: Adição, 2: Subtração, 3: Divisão, 4: Multiplicação):"));
+
+        let resultado;
+
+
+
+
+        switch (operacao) {
+            case 1:
+                resultado = valor1 + valor2;
+                alert("O resultado é " + resultado)
+                break
+
+            case 2:
+                resultado = valor1 - valor2;
+                alert("O resultado é " + resultado)
+                break
+            case 3:
+                resultado = valor1 / valor2;
+                alert("O resultado é " + resultado)
+                break
+            case 4:
+                resultado = valor1 * valor2;
+                alert("O resultado é " + resultado)
+                break
+            default:
+                alert("Operação inválida. Digite 1, 2, 3 ou 4.");
+                break;
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
