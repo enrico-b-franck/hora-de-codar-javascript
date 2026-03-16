@@ -7,28 +7,27 @@
     <title>Document</title>
 </head>
 
+<!-- Faça um programa que leia 6 valores informados pelo usuário, calcule, exiba os números 
+ informados e escreva a média aritmética
+  desses valores lidos.-->
+
 <body>
 
     <script>
 
+        let valores = [];
+        let soma = 0;
 
-        let numeros = [];   // array para guardar os valores
-        let soma = 0;       // variável para acumular a soma
 
-        // Loop para ler 6 valores
-        for (let i = 1; i <= 6; i++) {
-            let valor = parseFloat(prompt("Digite o " + i + "º número:"));
-            numeros.push(valor); // guarda o número no array
-
-            // Se for menor que 72, soma
-            if (valor < 72) {
-                soma += valor;
-            }
+        for (let i = 0; i < 6; i++) {
+            let numero = parseFloat(prompt("Digite um valor"));
+            valores.push(numero);
+            soma += numero;
         }
+        let media = soma / 6;
 
-        // Exibir resultados
-        alert("Valores informados: " + numeros.join(", "));
-        alert("Soma dos valores menores que 72: " + soma);
+        alert("A média desses valores são " + media);
+
 
 
 
