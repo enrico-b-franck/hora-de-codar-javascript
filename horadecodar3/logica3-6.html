@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- Escreva um programa para ler 
+ 2 notas de um aluno,
+  calcular e imprimir
+  a média final. 
+  Considere que a nota de 
+  aprovação é 9,5. 
+  Logo após escrever a mensagem
+   "Calcular a média de
+    outro aluno Sim/Não?" e
+     solicitar um resposta. 
+     Se a resposta for "S", o
+      programa deve ser executado
+       novamente, caso contrário
+        deve ser encerrado exibindo a
+  quantidade de alunos aprovados.-->
+
+<body>
+
+    <script>
+
+        let continuar = "Sim";
+
+        while (continuar.toLowerCase() === "sim"){
+
+        let nota1 = Number(prompt("Insira sua nota"));
+        let nota2 = Number(prompt("Insira sua segunda nota"));
+        let media = (nota1 + nota2) / 2;
+     
+        if (media > 9.5) {
+            alert("Você passou")
+        }
+
+        else {
+            alert("Você não passou")
+        }
+
+        alert("Sua média é " + media);
+
+        continuar = prompt("Calcular a média de outro aluno? Sim/Não");
+    }
+    </script>
+
+</body>
+</html>
