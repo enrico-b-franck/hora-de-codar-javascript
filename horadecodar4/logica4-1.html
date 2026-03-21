@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um novo dia para codar</title>
+    <script>
+        /* 1 - Estudantes. 
+        Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar "PARE" 
+        o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles. */
+        let estudantes = [];
+        let estudante = "";
+        while(estudante != "PARE" && estudante != "pare"){
+            estudante = prompt("Digite nomes de estudantes ate digitar pare para encerrar o cadastro");
+            estudantes.push(estudante);
+        }
+        alert('Quantidade de alunos que foram cadastrados foi -> ' + estudantes.length);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
