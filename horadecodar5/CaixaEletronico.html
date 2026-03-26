@@ -1,0 +1,224 @@
+<html>
+
+<!-- 
+Ao acessar o sistema, pergunte o nome do usuário e diga "Olá {Nome} é um prazer ter você por aqui!" FEITO**********
+
+Na função "inicio", utilize escolha/caso (switch/case) ou when (quando), se possível, para validar a opção escolhida pelo usuário. FEITO**********
+
+Sempre que o usuário for sacar dinheiro, o valor restante não pode ser negativo, ou seja, caso o usuário tente sacar mais do que tem em saldo, a ação não deve ocorrer. Exiba uma mensagem de "Operação não autorizada". FEITO**********
+
+Ajustar a ortografia da frase 'Por favor, informe um número entre 1 e 4' para 'Por favor, informe um número entre 1 a 4'. FEITO**********
+
+Adicionar a opção para ver o extrato (coloque algumas compras ou depósitos fictícios). FEITO**********
+
+Adicionar a opção para fazer uma transferência. A transferência consiste em você informar o número de uma conta (pode ser qualquer número, mas obrigatoriamente um número, ou seja, nenhum outro caractere deve ser aceito), perguntar o valor da transferência e remover o valor da conta da mesma forma como na ação do saldo. 
+Caso o usuário tente transferir mais do que tem em saldo, a ação não deve ocorrer. 
+Exiba uma mensagem de "Operação não autorizada". FEITO**********
+
+Sempre que o usuário for transferir dinheiro,  o valor a ser transferido não pode ser igual ou menor que zero, ou seja, caso o usuário tente transferir mais do que tem em saldo, a ação não deve ocorrer. Exiba uma mensagem de "Operação não autorizada". 
+
+No menu principal, a ordem das opções deve ser: Saldo, Extrato, Saque, Depósito, Transferência e Sair. FEITO**********
+
+Atualize a função "erro" com as novas opções do menu. FEITO**********
+
+Sempre que o usuário for sacar dinheiro, o valor a ser sacado não pode ser igual ou menor que zero. Exiba uma mensagem de "Operação não autorizada". FEITO**********
+
+Caso o usuário informe um valor para depósito igual ou menor que zero, não deixe a operação ocorrer. Exiba uma mensagem de "Operação não autorizada". FEITO**********
+
+Sempre que o usuário for acessar o saldo, sacar, retirar o extrato ou transferir dinheiro é necessário que ele informe uma senha. Essa senha deve ser validada com uma condicional. A senha é 3589. FEITO**********
+
+Caso a senha informada não seja a correta, é necessário chamar a função atual novamente. FEITO**********
+
+Quando o usuário escolher sair do sistema, exiba uma mensagem agradecendo por utilizar os serviços do banco: "{Nome}, foi um prazer ter você por aqui!". FEITO********** --> 
+
+<head>
+
+	<script>
+		var saldo = 100.5; //Float
+		function inicio() {
+
+			var nome = prompt("Olá, nos informe seu nome ")
+
+			function saudacao_com_nome(nome) {
+				alert("Olá " + nome + " é um prazer ter você por aqui!");
+			}
+
+			saudacao_com_nome(nome);
+
+			var escolha = parseInt(prompt('Selecione uma opção 1.) Saldo 2.) Extrato 3.) Saque 4.) Depóstio 5.) Transferência 6.) Sair'));
+
+			switch (escolha) {
+				case 1: (1);
+					ver_saldo();
+					break
+				case 2: (2)
+					ver_extrato();
+					break;
+				case 3: (3)
+					fazer_saque();
+					break;
+				case 4: (4)
+					fazer_deposito();
+					break;
+
+				case 5: (5)
+					transfer();
+					break;
+
+				case 6: (6)
+					sair();
+					break
+			}
+		}
+
+
+
+
+		function ver_saldo() {
+			var senha = prompt("Digite a senha")
+			if (s(senha)) {
+				alert("Login efetuado com sucesso!");
+			} else {
+				alert("senha inválida!");
+				ver_saldo(); 
+
+			}
+			alert('Seu saldo atual é: ' + saldo);
+			inicio();
+		}
+
+		function fazer_deposito() {
+			var senha = prompt("Digite a senha")
+			if (s(senha)) {
+				alert("senha correta!");
+			} else {
+				alert("senha inválida!");
+				fazer_deposito();
+			}
+			var deposito = parseFloat(prompt('Qual o valor para depósito?'));
+
+			// Not a Number
+			if (isNaN(deposito) || deposito === '') {
+				alert('Por favor, informe um número:');
+				fazer_deposito();
+			}
+			else if (deposito <= 0) {
+				alert("Operação não autorizada")
+			} else {
+				saldo += deposito;
+				ver_saldo();
+			}
+		}
+
+		function fazer_saque() {
+			var senha = prompt("Digite a senha")
+			if (s(senha)) {
+				alert("senha correta!");
+			} else {
+				alert("senha inválida!");
+				fazer_saque();
+			}
+			var saque = parseFloat(prompt('Qual o valor para saque?'));
+			if (isNaN(saque) || saque === '') {
+				alert('Por favor, informe um número:');
+				fazer_saque();
+			}
+			else if (saque > saldo || saque <= 0) {
+				alert("Operação não autorizada");
+			}
+
+			else {
+				saldo -= saque;
+			}
+			ver_saldo();
+		}
+
+		function transfer() {
+			var senha = prompt("Digite a senha")
+			if (s(senha)) {
+				alert("senha correta!");
+			} else {
+				alert("senha inválida!");
+				transfer();
+			}
+			var conta = prompt("Informe o número da conta para transferência:");
+
+
+			if (isNaN(conta) || conta === '') {
+				alert("Por favor, informe apenas números para a conta.");
+				return;
+			}
+
+			var valor = parseFloat(prompt("Informe o valor da transferência:"));
+
+
+			if (isNaN(valor) || valor <= 0) {
+				alert("Por favor, informe um valor válido.");
+				return;
+			}
+
+
+			if (valor > saldo) {
+				alert("Operação não autorizada. Saldo insuficiente.");
+			} else {
+				saldo -= valor;
+				alert("Transferência de R$ " + valor.toFixed(2) + " realizada para a conta " + conta + ".");
+				ver_saldo();
+			}
+		}
+
+		function s(senha) {
+			if (senha =="3589") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+
+
+
+
+		function erro() {
+			alert('Por favor, informe um número entre 1 a 6');
+			inicio();
+		}
+
+
+		function ver_extrato() {
+			var senha = prompt("Digite a senha")
+			if (s(senha)) {
+				alert("senha correta!");
+			} else {
+				alert("senha inválida!");
+				ver_extrato();
+			}
+			alert("Ultimos extratos: \n Compra no mercado - R$ 120,00 \n Depósito recebido - R$ 500,00\n Pagamento de conta de luz - R$ 200,00")
+
+		}
+
+		function sair(){
+			var confirma = confirm("Você deseja sair?");
+			alert("Obrigado " + nome + "por usar nosso serviço de caixa eletrônico!");
+			if (confirma){
+				window.close();
+			}
+			else {
+				inicio();
+			}
+			
+
+
+		}
+
+
+
+		inicio();
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
